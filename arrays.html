@@ -58,10 +58,47 @@
 			
 		</aside>
 		<main class="right">
-			<h1>Introduction to arrays</h1>
-			<div>
-			</div>
-				
+		<h1>Arrays</h1>
+		<h2>Average of numbers using arrays:</h2>
+		<div>
+			<pre>
+				<code>
+class introduction
+{
+    public static void main(String args[])
+    {
+        int array[];
+        array= new int[11];
+        int i;
+        int x=0;
+        for(i=0;i<11;i++)
+        {
+            array[i]=x;
+            x++;
+        }
+        float result=0;
+        int j;
+        for(j=0;j<11;j++)
+        {
+            result= result + array[j];
+        }
+        System.out.println("Average is: "+result/11);
+    }
+}
+
+				</code>
+			</pre>
+		</div >
+		<h2>Declaration of array:</h2>
+		<div class="para">
+			int array[]=new int[11] <br>
+	
+			is same as <br>
+	
+			int array[];
+      	array= new int[11];
+
+		</div>
 		</main>
 
 	<footer id="footer">
