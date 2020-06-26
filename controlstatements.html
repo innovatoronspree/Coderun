@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Control Statements</title>
+	<link rel="stylesheet" href="stylesheets/stylesheet_home.css">
+</head>
+<body>
+	<header>
+		<h1><a href="home.html">Coderun</a></h1>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="home.html" >Home</a></li>
+			<li><a href="#" class="active">Java</a>
+				<ul>
+					<li><a href="arrays.html">Arrays</a></li>
+					<li><a href="#" class="active">Control Statements</a></li>
+					<li><a href="#">Objects</a></li>
+					<li><a href="#">Constructors</a></li>
+					<li><a href="#">Interface</a></li>
+					<li><a href="#">Inheritance</a></li>
+					<li><a href="#">Exceptions</a></li>
+					<li><a href="#">Threads</a></li>
+					<li><a href="#">Polymorphism</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Swift</a>
+				<ul>
+					<li><a href="#">Variables</a></li>
+					<li><a href="#">Classes</a></li>
+					<li><a href="#">Objects</a></li>
+					<li><a href="#">Constructors</a></li>
+					<li><a href="#">Interface</a></li>
+					<li><a href="#">Inheritance</a></li>
+					<li><a href="#">Exceptions</a></li>
+					<li><a href="#">Threads</a></li>
+					<li><a href="#">Polymorphism</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Algorithms</a>
+				<ul>
+					<li><a href="#">Variables</a></li>
+					<li><a href="#">Classes</a></li>
+					<li><a href="#">Objects</a></li>
+					<li><a href="#">Constructors</a></li>
+					<li><a href="#">Interface</a></li>
+					<li><a href="#">Inheritance</a></li>
+					<li><a href="#">Exceptions</a></li>
+					<li><a href="#">Threads</a></li>
+					<li><a href="#">Polymorphism</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Contact us</a></li>
+		</ul>
+	</nav>
+		<aside class="left">
+			
+		</aside>
+		<main class="right">
+		<h1>Control Statements: </h1>
+		<h2>Selection Statements:</h2>
+		<div class="para">
+			If and switch are the selection statements in Java. These statements allow you to control the flow of your program’s execution based upon conditions known only during run time. 
+		</div>
+		<h2>If:</h2>
+		<div class="para">
+			<i>if (condition) statement1;</i> <br>
+			<i>else statement2;</i> <br>
+			The condition is any expression that returns a boolean value. The else clause is optional. 
+		</div>
+		<h2>If-else-if Ladder:</h2>
+		<div class="para">
+			<i>if(condition) statement;</i> <br>
+<i>else if(condition) statement; </i> <br>
+<i>else if(condition)</i>  <br>
+<i>statement; </i> <br>
+<i>. . else </i>	</br>
+<i>statement;</i> </br>
+		</div>
+		<h2>Swicth-case:</h2>
+		<div>
+			<pre>
+				<code>
+switch (expression)
+ { 
+	case value1: 
+		// statement sequence 
+		break; 
+	case value2: 
+		// statement sequence 
+		break; . 
+		. . 
+	case valueN: 
+		// statement sequence 
+		break; 
+	default: 
+		// default statement sequence
+ } 
+ 				</code>
+ 			</pre>
+ 		</div>
+ 		<br>
+ 		<div class="para">
+ 			The expression must be of type byte, short, int, or char; each of the values specified in the case statements must be of a type compatible with the expression. (An enumeration value can also be used to control a switch statement.) Each case value must be a unique literal (that is, it must be a constant, not a variable). Duplicate case values are not allowed. 
+
+ 		</div>
+ 		<br>
+ 		<div>
+ 			<pre>
+ 				<code>
+class example
+{
+   public static void main(String args[])
+   {
+       int i;
+       for(i=0;i<6;i++)
+       {
+           switch(i)
+           {
+                    case 0:
+                   {
+                       System.out.println("i is zero");
+                       break;
+                   }
+                   case 1:
+                   {
+                       System.out.println("i is one");
+                       break;
+                   }
+                   case 2:
+                   {
+                       System.out.println("i is two");
+                       break;
+                   }
+                   case 3:
+                   {
+                       System.out.println("i is three");
+                       break;
+                   }
+                   default:
+                   {
+                       System.out.println("i is greater than three");
+                   }
+           }
+       }
+   }
+}</code>
+			</pre>
+		</div>
+		<h2>OUTPUT:</h2>
+		<div>
+			<pre class = "output">
+				<code class="output">
+i is zero
+i is one
+i is two
+i is three
+i is greater than three
+i is greater than three</code>
+			</pre>
+		</div>
+		<h2>What if the break statement is not included?</h2>
+		<div>
+			<pre>
+				<code>
+class example
+{
+   public static void main(String args[])
+   {
+       int i;
+       for(i=0;i<6;i++)
+       {
+           switch(i)
+           {
+                    case 0:
+                   {
+                       System.out.println("i is zero");
+                       break;
+                   }
+                   case 1:
+                   {
+                       System.out.println("i is one");
+                       break;
+                   }
+                   case 2:
+                   {
+                       System.out.println("i is two");
+                      
+                   }
+                   case 3:
+                   {
+                       System.out.println("i is three");
+                      
+                   }
+                   default:
+                   {
+                       System.out.println("i is greater than three");
+                   }
+           }
+       }
+   }
+}</code>
+				</pre>
+			</div>
+<h2>OUTPUT:</h2>
+		<div>
+			<pre class = "output">
+				<code class="output">
+i is zero
+i is one
+i is two
+i is three
+i is greater than three
+i is three
+i is greater than three
+i is greater than three
+i is greater than three</code>
+			</pre>
+		</div>
+		<br>
+		<div class="para">
+			All cases after the first case that matches the value of switch expression are evaluated.
+		</div>
+		<br>
+<div>
+	<pre>
+		<code>
+			class Switch {
+    public static void main(String args[]) {
+        int month = 4;
+        String season;
+        switch (month) {
+          case 12:
+          case 1:
+          case 2:
+            season = "Winter";
+            break;
+          case 3:
+          case 4:
+          case 5:
+            season = "Spring";
+            break;
+          case 6:
+          case 7:
+          case 8:
+            season = "Summer";
+            break;
+          case 9:
+          case 10:
+          case 11:
+            season = "Autumn";
+            break;
+          default:
+            season = "Bogus Month";
+        }
+        System.out.println("April is in the " + season + ".");
+    }
+} </code>
+	</pre>
+</div>
+<div>
+	<h2>OUTPUT:</h2>
+			<pre class = "output">
+				<code class="output">
+April is in the Spring.</code>
+			</pre>
+		</div>
+<h2>Summary:</h2>
+<ul>
+<li>
+	<div class="para">
+		The switch differs from the if in that switch can only test for equality, whereas if can evaluate any type of Boolean expression. That is, the switch looks only for a match between the value of the expression and one of its case constants.  
+	</div>
+</li>
+
+<li>
+	<div class="para">
+		No two case constants in the same switch can have identical values. Of course, a switch statement and an enclosing outer switch can have case constants in common. 
+	</div>
+</li>
+<li>
+	<div class="para">
+		A switch statement is usually more efficient than a set of nested ifs. 
+	</div>
+</li>
+<li>
+<div class="para">
+	The last point is particularly interesting because it gives insight into how the Java compiler works. When it compiles a switch statement, the Java compiler will inspect each of the case constants and create a “jump table” that it will use for selecting the path of execution depending on the value of the expression. Therefore, if you need to select among a large group of values, a switch statement will run much faster than the equivalent logic coded using a sequence of if-elses. The compiler can do this because it knows that the case constants are all the same type and simply must be compared for equality with the switch expression. The compiler has no such knowledge of a long list of if expressions. 
+</div>
+</li>
+</ul>
+<br>
+			
+		</main>
+
+	<footer id="footer">
+		
+		
+	</footer>
+</div>
+</body>
+</html>
