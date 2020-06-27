@@ -136,7 +136,7 @@ nav>ul>li>a
 }
 
 .right p{
-	color:brown;
+	color:rgb(165,42,42);
 	font-family:'Helvetica';
 	font-size:1em;
 	font-style:italic;
@@ -190,7 +190,8 @@ code{
     font-weight:normal;
 }
 .para{
-    color:rgb(57, 105, 199);
+   /* color:rgb(57, 105, 199); */
+   	color:rgb(165,42,42);
     font-family: Helvetica Neue;
     margin-left: 50px;
     font-size: 1.3em;
