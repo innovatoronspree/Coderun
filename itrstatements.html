@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Arrays</title>
+	<title>Iteration Statements</title>
 	<link rel="stylesheet" href="stylesheets/stylesheet_home.css">
 </head>
 <body>
@@ -58,7 +58,384 @@
 			
 		</aside>
 		<main class="right">
-		
+		<h1>Iteration Statements</h1>
+		<h2>While:</h2>
+		<div>
+			<pre>
+				<code>
+while(condition)
+{
+   //body of loop
+}</code>
+			</pre>
+		</div>
+		<br>
+		<div class="para">
+		The condition can be any Boolean expression. The body of the loop will be executed as long as the conditional expression is true. When condition becomes false, control passes to the next line of code immediately following the loop. 
+		</div>
+		<br>
+		<div>
+			<pre>
+				<code>
+class Apple
+{
+    public static void main(String args[])
+    {
+        int tick=10;
+        while(tick>0)
+        {
+            System.out.println("Tick is "+tick);
+            tick--;
+        }
+    }
+}</code>
+			</pre>
+		</div>
+		<h2>OUTPUT:</h2>
+		<div>
+			<pre class="output">
+				<code class="output">
+Tick is 10
+Tick is 9
+Tick is 8
+Tick is 7
+Tick is 6
+Tick is 5
+Tick is 4
+Tick is 3
+Tick is 2
+Tick is 1</code>
+			</pre>
+		</div>
+<br>
+<div class="para">
+Even putting a semi-colon after the while loop statement is syntactically correct. To demonstrate this, see the below example:
+</div>
+<br>
+<div>
+	<pre>
+		<code>
+class example
+{
+    public static void main(String args[])
+    {
+        int i,j;
+        i=100;
+        j=200;
+        while(++i<--j);
+        System.out.println("Midpoint is "+i);
+    }
+}</code>
+	</pre>
+</div>
+<h2>OUTPUT:</h2>
+<div>
+	<pre class="output">
+		<code class="output">
+Midpoint is 150</code>
+	</pre>
+</div>
+<h2>do-while loop:</h2>
+<div class="para">
+Sometimes it is desirable to execute the body of a loop at least once, even if the conditional expression is false to begin with. In other words, there are times when you would like to test the termination expression at the end of the loop rather than at the beginning. 
+</div>
+<br>
+<div> 
+	<pre>
+		<code>
+do{
+ 
+   // body of loop
+
+} while (condition); </code>
+	</pre>
+</div>
+<br>
+<div>
+	<pre>
+		<code>
+class example
+{
+    public static void main(String args[])
+    {
+        int tick=10;
+        do{
+            System.out.println(“Tick is “+tick);
+            tick--;
+        }
+        while(tick>0);
+    }
+}</code>
+	</pre>
+</div>
+<h2>OUTPUT:</h2>
+<div> 
+	<pre class="output">
+		<code class="output">	
+Tick is 10
+Tick is 9
+Tick is 8
+Tick is 7
+Tick is 6
+Tick is 5
+Tick is 4
+Tick is 3
+Tick is 2
+Tick is 1</code>
+	</pre>
+</div>
+<br>
+<div class="para">
+The shorter version for above code can be:
+</div>
+<br>
+<div>
+	<pre>
+		<code>
+do{
+    System.out.println("Tick is "+tick);
+  }
+while(--tick>0);</code>
+	</pre>
+</div>
+<br>
+<div class="para">
+The do-while loop is especially useful when you process a menu selection, because you will usually want the body of a menu loop to execute at least once. You can understand this through the following example. 
+</div>
+<br>
+<div>
+	<pre>
+		<code>
+class example
+{
+    public static void main(String args[])
+    throws java.io.IOException
+    {
+        char choice;
+        do{
+            System.out.println("1. Addition");
+            System.out.println("2. Subtraction");
+            System.out.println("3. Multiplication");
+            System.out.println("4. Division");
+            System.out.println("Enter choice");
+            choice=(char)System.in.read();
+        }
+        while(choice<'1'||choice>'4');
+        switch(choice)
+        {
+            case '1':
+                {
+                    System.out.println("Addition is a+b");
+                    break;
+                }
+            case '2':
+                {
+                    System.out.println("Subtraction is a-b");
+                    break;
+                }
+            case '3':
+                {
+                    System.out.println("Multiplication is a*b");
+                    break;
+                }
+            case '4':
+                {
+                    System.out.println("Division is a/b");
+                    break;
+                }
+            default:
+                {
+                    System.out.println("Please enter a valid choice.");
+                }
+        }
+    }
+}</code>
+			</pre>
+	</div>
+<h2>OUTPUT:</h2>
+<div>
+	<pre class="output">
+		<code class="output">
+1. Addition
+2. Subtraction
+3. Multiplication
+4. Division
+Enter choice
+Multiplication is a*b</code>
+	</pre>
+</div>
+<br>
+<ul>
+	<li><div class="para">
+		<b>System.in.read( )</b> is used here to obtain the user’s choice. It reads characters from standard input (returned as <b>integers</b>, which is why the return value was cast to <b>char</b>). By default, standard input is line buffered, so you must press ENTER before any characters that you type will be sent to your program.
+		</div>
+	</li>
+	<li><div class="para">
+		 Because <b>System.in.read( )</b> is being used, the program must specify the <b>throws java.io.IOException</b> clause. This line is necessary to handle input errors. It is part of Java’s exception handling features.
+		</div>
+	</li>
+</ul>
+<br>
+<h2>for loop:</h2>
+<h3>Traditional for statement:</h3>
+<div>
+	<pre>
+		<code>
+for(initialization; condition; iteration)
+{
+   // body 
+} </code>
+	</pre>
+</div>
+<br>
+<div>
+	<pre>
+		<code>
+class example
+{
+    public static void main(String args[])
+    {
+        int i,num;
+        num=20;
+        boolean isprime= true;
+        for(i=2;i<=num/2;i++)
+        {
+            if(num%i==0)
+            {
+                isprime=false;
+                break;
+            }
+        }
+        if(isprime==true)
+        System.out.println(""+num+" is prime");
+        else 
+        System.out.println(""+num+" is not prime");
+    }
+}</code>
+	</pre>
+</div>
+<h2>OUTPUT:</h2>
+<div>
+	<pre class="output">
+		<code class="output">
+20 is not prime</code>
+	</pre>
+</div>
+<br>
+<div class="para">
+Here we can even declare i directly within the for loop statement. But remember this is the case only when we do not wish to use the counter variable again. Because we cannot use i again because it will be out of scope.
+</div>
+<br>
+<div class="para">
+	for(<b>int i=2</b>;i<=num/2;i++)
+</div>
+<br>
+<div class="para">
+There will be times when you will want to include more than one statement in the initialisation and iteration portions of the for loop. See the following example to understand this.
+</div>
+<br>
+<div>
+	<pre>
+		<code>
+class example
+{
+    public static void main(String args[])
+    {
+        int a,b;
+        for(a=1,b=4 ; a&lt;b ; a++,b--)
+        {
+            System.out.println("a= "+a);
+            System.out.println("b= "+b);
+        }
+    }
+}</code>
+	</pre>
+</div>
+<br>
+<div class="para">
+Another possible code for the above problem is:
+</div>
+<br>
+<div>
+	<pre>
+		<code>
+class example
+{
+    public static void main(String args[])
+    {
+        int a,b;
+        b=4;
+        for(a=1;a&lt;b;a++)
+        {
+            System.out.println("a= "+a);
+            System.out.println("b= "+b);
+            b--;
+        }
+    }
+}</code>
+	</pre>
+</div>
+<br>
+<div class="para">
+Both snippets produce the same output.
+</div>
+<h2>OUTPUT:</h2>
+<div>
+	<pre class="output">
+		<code class="output">
+a= 1
+b= 4
+a= 2
+b= 3</code>
+	</pre>
+</div>
+<br>
+<h3>NOTE:</h3>
+<div class="para">
+If you are familiar with C/C++, then you know that in those languages the comma is an operator that can be used in any valid expression. However, this is not the case with Java. In Java, the comma is a separator. 
+</div>
+<br>
+<h2>Some for loop variations:</h2>
+<div class="para">
+Condition controlling the <b>for</b> can be any Boolean expression. 
+</div>
+<br>
+<div>
+	<pre>
+		<code>
+boolean done = false;
+for(int i=1; !done; i++) {
+  // ...
+  if(interrupted()) done = true;
+}
+</code>
+</pre>
+</div>
+<br>
+<div class="para">
+The program runs until the value of <i>done</i> is set to false. As soon as <i>done</i> is set to true, condition becomes not true i.e. false.
+</div>
+<br>
+<div class="para">
+Here is one more for loop variation. You can intentionally create an        <b>infinite loop</b> (a loop that never terminates) if you leave all three parts of the for empty.
+</div>
+<br>
+<div>
+	<pre>
+		<code>
+for(	 ;	 ;	 ) 
+{
+  // ...
+} 
+</code>
+	</pre>
+</div>
+<br>
+
+
+
+
+
 
 
 		</main>
@@ -67,6 +444,6 @@
 		
 		
 	</footer>
-</div>
+
 </body>
 </html>

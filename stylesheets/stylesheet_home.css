@@ -180,6 +180,14 @@ code{
     font-family: Helvetica Neue;
     margin-bottom: 30px;
 }
+.right h3{
+	margin-left: 50px;
+    color: rgb(63, 179, 69);
+    text-decoration: underline;
+    font-weight: normal;
+    font-family: Helvetica Neue;
+    margin-bottom: 30px;
+}
 .right h1{
    color: rgb(63, 179, 69);
     font-family: Helvetica Neue;
@@ -201,7 +209,7 @@ code{
 
 }
 li{
-	color:rgb(57, 105, 199);
+	color:rgb(165,42,42);
 }
 
 
