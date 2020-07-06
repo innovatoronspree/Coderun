@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Iteration Statements</title>
+	<title>Iteration Statements 2</title>
 	<link rel="stylesheet" href="stylesheets/stylesheet_home.css">
 </head>
 <body>
@@ -16,9 +16,9 @@
 				<ul>
 					<li><a href="arrays.html" >Arrays</a></li>
 					<li><a href="controlstatements.html">Control Statements</a></li>
-					<li><a href="#" class="active">Iteration Statements</a></li>
-					<li><a href="#">Constructors</a></li>
-					<li><a href="#">Interface</a></li>
+					<li><a href="itrstatements.html" >Iteration Statements</a></li>
+					<li><a href="#" class="active">Iteration Statements 2</a></li>
+					<li><a href="jump.html">Jump Statements</a></li>
 					<li><a href="#">Inheritance</a></li>
 					<li><a href="#">Exceptions</a></li>
 					<li><a href="#">Threads</a></li>
@@ -58,234 +58,111 @@
 			
 		</aside>
 		<main class="right">
-		<h1>Iteration Statements</h1>
-		<h2>While:</h2>
-		<div>
-			<pre>
-				<code>
-while(condition)
-{
-   //body of loop
-}</code>
-			</pre>
-		</div>
-		<br>
+		<h1>Iteration Statements Continued</h1>
+		<h2>For-Each Loop:</h2>
 		<div class="para">
-		The condition can be any Boolean expression. The body of the loop will be executed as long as the conditional expression is true. When condition becomes false, control passes to the next line of code immediately following the loop. 
+For-each style of <b>for</b> is also referred to as the <b>enhanced for loop.</b> 
+A for- each style loop is designed to cycle through a collection of objects, such as an array, in strictly <b>sequential fashion, from start to finish</b>.
 		</div>
 		<br>
 		<div>
 			<pre>
 				<code>
-class Apple
+for(type itr-var : collection) 
 {
-    public static void main(String args[])
-    {
-        int tick=10;
-        while(tick>0)
-        {
-            System.out.println("Tick is "+tick);
-            tick--;
-        }
-    }
+	statement-block
 }</code>
 			</pre>
 		</div>
-		<h2>OUTPUT:</h2>
-		<div>
-			<pre class="output">
-				<code class="output">
-Tick is 10
-Tick is 9
-Tick is 8
-Tick is 7
-Tick is 6
-Tick is 5
-Tick is 4
-Tick is 3
-Tick is 2
-Tick is 1</code>
-			</pre>
-		</div>
-<br>
-<div class="para">
-Even putting a semi-colon after the while loop statement is syntactically correct. To demonstrate this, see the below example:
-</div>
-<br>
-<div>
-	<pre>
-		<code>
-class example
-{
-    public static void main(String args[])
-    {
-        int i,j;
-        i=100;
-        j=200;
-        while(++i<--j);
-        System.out.println("Midpoint is "+i);
-    }
-}</code>
-	</pre>
-</div>
-<h2>OUTPUT:</h2>
-<div>
-	<pre class="output">
-		<code class="output">
-Midpoint is 150</code>
-	</pre>
-</div>
-<h2>do-while loop:</h2>
-<div class="para">
-Sometimes it is desirable to execute the body of a loop at least once, even if the conditional expression is false to begin with. In other words, there are times when you would like to test the termination expression at the end of the loop rather than at the beginning. 
-</div>
-<br>
-<div> 
-	<pre>
-		<code>
-do{
- 
-   // body of loop
-
-} while (condition); </code>
-	</pre>
-</div>
-<br>
-<div>
-	<pre>
-		<code>
-class example
-{
-    public static void main(String args[])
-    {
-        int tick=10;
-        do{
-            System.out.println(“Tick is “+tick);
-            tick--;
-        }
-        while(tick>0);
-    }
-}</code>
-	</pre>
-</div>
-<h2>OUTPUT:</h2>
-<div> 
-	<pre class="output">
-		<code class="output">	
-Tick is 10
-Tick is 9
-Tick is 8
-Tick is 7
-Tick is 6
-Tick is 5
-Tick is 4
-Tick is 3
-Tick is 2
-Tick is 1</code>
-	</pre>
-</div>
-<br>
-<div class="para">
-The shorter version for above code can be:
-</div>
-<br>
-<div>
-	<pre>
-		<code>
-do{
-    System.out.println("Tick is "+tick);
-  }
-while(--tick>0);</code>
-	</pre>
-</div>
-<br>
-<div class="para">
-The do-while loop is especially useful when you process a menu selection, because you will usually want the body of a menu loop to execute at least once. You can understand this through the following example. 
-</div>
-<br>
-<div>
-	<pre>
-		<code>
-class example
-{
-    public static void main(String args[])
-    throws java.io.IOException
-    {
-        char choice;
-        do{
-            System.out.println("1. Addition");
-            System.out.println("2. Subtraction");
-            System.out.println("3. Multiplication");
-            System.out.println("4. Division");
-            System.out.println("Enter choice");
-            choice=(char)System.in.read();
-        }
-        while(choice<'1'||choice>'4');
-        switch(choice)
-        {
-            case '1':
-                {
-                    System.out.println("Addition is a+b");
-                    break;
-                }
-            case '2':
-                {
-                    System.out.println("Subtraction is a-b");
-                    break;
-                }
-            case '3':
-                {
-                    System.out.println("Multiplication is a*b");
-                    break;
-                }
-            case '4':
-                {
-                    System.out.println("Division is a/b");
-                    break;
-                }
-            default:
-                {
-                    System.out.println("Please enter a valid choice.");
-                }
-        }
-    }
-}</code>
-			</pre>
-	</div>
-<h2>OUTPUT:</h2>
-<div>
-	<pre class="output">
-		<code class="output">
-1. Addition
-2. Subtraction
-3. Multiplication
-4. Division
-Enter choice
-Multiplication is a*b</code>
-	</pre>
-</div>
-<br>
 <ul>
-	<li><div class="para">
-		<b>System.in.read( )</b> is used here to obtain the user’s choice. It reads characters from standard input (returned as <b>integers</b>, which is why the return value was cast to <b>char</b>). By default, standard input is line buffered, so you must press ENTER before any characters that you type will be sent to your program.
+	<li>
+		<div class="para">
+			<b>Type</b> specifies the type and <b>itr-var</b> specifies the name of an iteration variable that will receive the elements from a collection, one at a time, from beginning to end. 	
 		</div>
 	</li>
-	<li><div class="para">
-		 Because <b>System.in.read( )</b> is being used, the program must specify the <b>throws java.io.IOException</b> clause. This line is necessary to handle input errors. It is part of Java’s exception handling features.
+	<li>
+		<div class="para">
+			The <b>collection</b> being cycled through is specified by collection.
+		</div>
+	</li>
+	<li>
+		<div class="para">
+			With each iteration of the loop, <b>the next element in the collection is retrieved and stored in itr-var</b>. The loop repeats until all elements in the collection have been obtained. 
+		</div>
+	</li>
+	<li>
+		<div class="para">
+			The iteration variable receives values from the collection, <b>type</b> must be the same as (or compatible with) the elements stored in the collection. Thus, when iterating over arrays, type must be compatible with the base type of the array. 
 		</div>
 	</li>
 </ul>
 <br>
-<h2>for loop:</h2>
-<h3>Traditional for statement:</h3>
 <div>
 	<pre>
 		<code>
-for(initialization; condition; iteration)
+class example
 {
-   // body 
-} </code>
+    public static void main(String args[])
+    {   
+        int sum=0;
+        int array[]={1,2,3,4,5,6,7,8,9,10};
+        for(int i:array)
+        {
+            sum=sum+i;
+        }
+        System.out.println("Sum is "+sum);
+    }
+}</code>
 	</pre>
+</div>
+<h2>OUTPUT:</h2>
+<div>
+	<pre class="output">
+		<code class="output">
+Sum is 55</code>
+	</pre>
+<br>
+</div>
+
+<div class="para">
+	Although the <b>for-each</b> for loop iterates until all elements in an array have been examined, it is possible to terminate the loop early by using a <b>break</b> statement. 
+</div>
+<br>
+<div>
+	<pre>
+		<code>
+class example
+{
+    public static void main(String args[])
+    {   
+        int sum=0;
+        int array[]={1,2,3,4,5,6,7,8,9,10};
+        for(int i:array)
+        {
+            sum=sum+i;
+            if(i==5)
+            break;
+        }
+        System.out.println("Sum is "+sum);
+    }
+}</code>
+	</pre>
+</div>
+<h2>OUTPUT:</h2>
+<div>
+	<pre class="output">
+		<code class="output">
+Sum is 15</code>
+	</pre>
+</div>
+<br>
+<div class="para">
+	Not only is the syntax streamlined, but it also prevents boundary errors. 
+</div>
+<br>
+<h3>A WORD OF CAUTION:</h3>
+<div class="para">
+	The iteration variable is “read-only” as it relates to the underlying array. An assignment to the iteration variable has no effect on the underlying array. In other words, you can’t change the contents of the array by assigning the iteration variable a new value. 
 </div>
 <br>
 <div>
@@ -295,21 +172,68 @@ class example
 {
     public static void main(String args[])
     {
-        int i,num;
-        num=20;
-        boolean isprime= true;
-        for(i=2;i<=num/2;i++)
+        int array[]=new int[10];
+        int j=1;
+        for(int i=0;i<10;i++)
         {
-            if(num%i==0)
+            array[i]=j;
+            j++;
+        }
+        for(int x:array)
+        {
+            System.out.print(" "+x);
+        }
+        for(int x:array)
+        {
+            x=x*10;
+        }
+        System.out.println();
+        for(int x:array)
+        {
+            System.out.print(" "+x);
+        }
+    }
+}</code>
+	</pre>
+</div>
+<h2>OUTPUT:</h2>
+<div>
+	<pre class="output">
+		<code class="output">
+1 2 3 4 5 6 7 8 9 10
+1 2 3 4 5 6 7 8 9 10</code>
+	</pre>
+</div>
+<br>
+<h2>Iterating over multi-dimesnional arrays using for-each statement:</h2>
+<div>
+	<pre>
+		<code>
+class example
+{
+    public static void main(String args[])
+    {   
+        int sum=0;
+        int array[][]= new int[3][5];
+        int i,j;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<5;j++)
             {
-                isprime=false;
-                break;
+                array[i][j]=(i+1)*(j+1);
             }
         }
-        if(isprime==true)
-        System.out.println(""+num+" is prime");
-        else 
-        System.out.println(""+num+" is not prime");
+        for(int x[]:array)
+        {
+            for(int y:x)
+                {
+                    System.out.println("Value is "+y);
+                    sum=sum+y;
+                    
+                }
+        }
+        System.out.println();
+        System.out.println("Sum is "+sum);
     }
 }</code>
 	</pre>
@@ -318,125 +242,26 @@ class example
 <div>
 	<pre class="output">
 		<code class="output">
-20 is not prime</code>
+Value is 1
+Value is 2
+Value is 3
+Value is 4
+Value is 5
+Value is 2
+Value is 4
+Value is 6
+Value is 8
+Value is 10
+Value is 3
+Value is 6
+Value is 9
+Value is 12
+Value is 15
+
+Sum is 90</code>
 	</pre>
 </div>
 <br>
-<div class="para">
-Here we can even declare i directly within the for loop statement. But remember this is the case only when we do not wish to use the counter variable again. Because we cannot use i again because it will be out of scope.
-</div>
-<br>
-<div class="para">
-	for(<b>int i=2</b>;i<=num/2;i++)
-</div>
-<br>
-<div class="para">
-There will be times when you will want to include more than one statement in the initialisation and iteration portions of the for loop. See the following example to understand this.
-</div>
-<br>
-<div>
-	<pre>
-		<code>
-class example
-{
-    public static void main(String args[])
-    {
-        int a,b;
-        for(a=1,b=4 ; a&lt;b ; a++,b--)
-        {
-            System.out.println("a= "+a);
-            System.out.println("b= "+b);
-        }
-    }
-}</code>
-	</pre>
-</div>
-<br>
-<div class="para">
-Another possible code for the above problem is:
-</div>
-<br>
-<div>
-	<pre>
-		<code>
-class example
-{
-    public static void main(String args[])
-    {
-        int a,b;
-        b=4;
-        for(a=1;a&lt;b;a++)
-        {
-            System.out.println("a= "+a);
-            System.out.println("b= "+b);
-            b--;
-        }
-    }
-}</code>
-	</pre>
-</div>
-<br>
-<div class="para">
-Both snippets produce the same output.
-</div>
-<h2>OUTPUT:</h2>
-<div>
-	<pre class="output">
-		<code class="output">
-a= 1
-b= 4
-a= 2
-b= 3</code>
-	</pre>
-</div>
-<br>
-<h3>NOTE:</h3>
-<div class="para">
-If you are familiar with C/C++, then you know that in those languages the comma is an operator that can be used in any valid expression. However, this is not the case with Java. In Java, the comma is a separator. 
-</div>
-<br>
-<h2>Some for loop variations:</h2>
-<div class="para">
-Condition controlling the <b>for</b> can be any Boolean expression. 
-</div>
-<br>
-<div>
-	<pre>
-		<code>
-boolean done = false;
-for(int i=1; !done; i++) {
-  // ...
-  if(interrupted()) done = true;
-}
-</code>
-</pre>
-</div>
-<br>
-<div class="para">
-The program runs until the value of <i>done</i> is set to false. As soon as <i>done</i> is set to true, condition becomes not true i.e. false.
-</div>
-<br>
-<div class="para">
-Here is one more for loop variation. You can intentionally create an        <b>infinite loop</b> (a loop that never terminates) if you leave all three parts of the for empty.
-</div>
-<br>
-<div>
-	<pre>
-		<code>
-for(	 ;	 ;	 ) 
-{
-  // ...
-} 
-</code>
-	</pre>
-</div>
-<br>
-
-
-
-
-
-
 
 		</main>
 

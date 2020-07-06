@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Iteration Statements 2</title>
+	<link rel="stylesheet" href="stylesheets/stylesheet_home.css">
+</head>
+<body>
+	<header>
+		<h1><a href="home.html">Coderun</a></h1>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="home.html">Home</a></li>
+			<li><a href="#" class="active">Java</a>
+				<ul>
+					<li><a href="arrays.html" >Arrays</a></li>
+					<li><a href="controlstatements.html">Control Statements</a></li>
+					<li><a href="itrstatements.html" >Iteration Statements</a></li>
+					<li><a href="itrstatements2.html">Iteration Statements 2</a></li>
+					<li><a href="#" class="active">Jump Statements</a></li>
+					<li><a href="#">Inheritance</a></li>
+					<li><a href="#">Exceptions</a></li>
+					<li><a href="#">Threads</a></li>
+					<li><a href="#">Polymorphism</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Swift</a>
+				<ul>
+					<li><a href="#">Variables</a></li>
+					<li><a href="#">Classes</a></li>
+					<li><a href="#">Objects</a></li>
+					<li><a href="#">Constructors</a></li>
+					<li><a href="#">Interface</a></li>
+					<li><a href="#">Inheritance</a></li>
+					<li><a href="#">Exceptions</a></li>
+					<li><a href="#">Threads</a></li>
+					<li><a href="#">Polymorphism</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Algorithms</a>
+				<ul>
+					<li><a href="#">Variables</a></li>
+					<li><a href="#">Classes</a></li>
+					<li><a href="#">Objects</a></li>
+					<li><a href="#">Constructors</a></li>
+					<li><a href="#">Interface</a></li>
+					<li><a href="#">Inheritance</a></li>
+					<li><a href="#">Exceptions</a></li>
+					<li><a href="#">Threads</a></li>
+					<li><a href="#">Polymorphism</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Contact us</a></li>
+		</ul>
+	</nav>
+		<aside class="left">
+			
+		</aside>
+		<main class="right">
+		<h1>Jump Statements</h1>
+		<h2>Break:</h2>
+		<div class="para">
+			In Java, the <b>break</b> statement has three uses. First, as you have seen, it terminates a statement sequence in a <b>switch</b> statement. Second, it can be used to <b>exit</b> a loop. Third, it can be used as a <em>civilised</em> form of goto. 
+		</div>
+		<br>
+		<h2>Using break to exit a loop:</h2>
+		<div class="para">
+			By using <b>break</b>, you can force <em>immediate termination</em> of a loop, bypassing the conditional expression and any remaining code in the body of the loop.
+		</div>
+		<br>
+		<div>
+			<pre>
+				<code>
+class example
+{
+    public static void main(String args[])
+    {
+        for(int i=0;i<3;i++)
+        {
+            System.out.print("Pass "+(i+1)+": ");
+            for(int j=0;j<100;j++)
+            {
+                System.out.print(j+" ");
+                if(j==4)
+                break;
+            }
+            System.out.println();
+        }
+    }
+}</code>
+			</pre>
+		</div>
+<h2>OUTPUT:</h2>
+<div>
+	<pre class="output">
+		<code>
+Pass 1: 0 1 2 3 4 
+Pass 2: 0 1 2 3 4 
+Pass 3: 0 1 2 3 4</code>
+	</pre>
+</div>
+<br>
+<div class="para">
+	The break statement in the inner loop only causes termination of that loop. The outer loop is unaffected. 
+</div>
+<br>
+<h2>Using break as a form of goto:</h2>
+<div class="para">
+	The goto can be useful when you are exiting from a deeply nested set of loops. To handle such situations, Java defines an expanded form of the break statement. By using this form of break, you can, for example, break out of one or more blocks of code. <b>These blocks need not be part of a loop or a switch</b>. They can be any block. Further, you can specify precisely where execution will resume, because this form of <b>break</b> works with a label. 
+</div>
+<br>
+<div class="para">
+	The general form of the <b>labeled break</b> statement is shown here: 
+</div>
+<br>
+<div>
+	<pre>
+		<code>
+break label;</code>
+	</pre>
+</div>
+<br>
+<div>
+	<pre>
+		<code>
+class example
+{
+    public static void main(String args[])
+    {   
+        boolean t=true;
+        first:
+        {
+            second:
+            {
+                third:
+                {
+                    System.out.print("Java is a ");
+                    if(t)
+                    break second;
+                }
+                System.out.print("beautiful ");
+            }
+            System.out.print("language.");
+        }
+    }
+}</code>
+	</pre>
+</div>
+<h2>OUTPUT:</h2>
+<div>
+	<pre class="output">
+		<code class="output">
+Java is a language.</code>
+	</pre>
+</div>
+<br>
+<div class="para">
+	Using <b>labelled break</b> to exit from nested loops:
+</div>
+<br>
+<div>
+	<pre>
+		<code>
+class example
+{
+    public static void main(String args[])
+    {
+        outer: for(int i=0;i<3;i++)
+        {   
+            System.out.print("Pass "+i+":");
+            for(int j=0;j<100;j++)
+            {
+                System.out.print(" "+j+" ");
+                if(j==10)
+                break outer;
+            }
+            System.out.println();
+        }
+    }
+}</code>
+	</pre>
+</div>
+<h2>OUTPUT:</h2>
+<div>
+	<pre class="output">
+		<code class="output">
+Pass 0: 0  1  2  3  4  5  6  7  8  9  10</code>
+	</pre>
+</div>
+<br>
+<h2>Continue:</h2>
+<div class="para">
+	Sometimes it is useful to force an early iteration of a loop. That is, one might want to continue running the loop but stop processing the remainder of the code in its body for this particular iteration. 
+</div>
+<br>
+<ul>
+	<li>
+		<div class="para">
+			In <b>while</b> and <b>do-while</b> loops, a <b>continue</b> statement causes control to be transferred directly to the conditional expression that controls the loop. 
+		</div>
+	</li>
+	<li>
+		<div class="para">
+			In a <b>for</b> loop, control goes first to the iteration portion of the for statement and then to the conditional expression.
+		</div>
+	</li>
+	<li>
+		<div class="para">
+			For all three loops, any intermediate code is bypassed. 
+		</div>
+	</li>
+</ul>
+<br>
+<div>
+	<pre>
+		<code>
+class example
+{
+    public static void main(String args[])
+    {
+        for(int i=0;i<10;i++)
+        {
+            System.out.print(i+" ");
+            if(i%2==0)
+            continue;
+            System.out.println();
+        }
+    }
+}</code>
+	</pre>
+</div>
+<h2>OUTPUT:</h2>
+<div>
+	<pre class="output">
+		<code>
+0 1 
+2 3 
+4 5 
+6 7 
+8 9 </code>
+	</pre>
+</div>
+<br>
+
+<div class="para">
+	As with the <b>break</b> statement, <b>continue</b> may specify a label to describe which enclosing loop to continue. 
+</div>
+<br>
+<div>
+	<pre>
+		<code>
+class example
+{
+    public static void main(String args[])
+    {
+        outer:for(int i=0;i<10;i++)
+        {   
+            for(int j=0;j<10;j++)
+            {   
+                if(j>i)
+                {
+                    System.out.println();
+                    continue outer;
+                }
+                System.out.print(" "+i*j);
+            }
+        }
+        System.out.println();
+    }
+}</code>
+	</pre>
+</div>
+<h2>OUTPUT:</h2>
+<div>
+	<pre class="output">
+		<code class="output">
+ 0
+ 0 1
+ 0 2 4
+ 0 3 6 9
+ 0 4 8 12 16
+ 0 5 10 15 20 25
+ 0 6 12 18 24 30 36
+ 0 7 14 21 28 35 42 49
+ 0 8 16 24 32 40 48 56 64
+ 0 9 18 27 36 45 54 63 72 81</code>
+	</pre>
+</div>
+<br>
+
+		</main>
+
+	<footer id="footer">
+		
+		
+	</footer>
+
+</body>
+</html>
