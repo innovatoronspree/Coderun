@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Iteration Statements 2</title>
+	<link rel="stylesheet" href="stylesheets/stylesheet_home.css">
+</head>
+<body>
+	<header>
+		<h1><a href="home.html">Coderun</a></h1>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="home.html">Home</a></li>
+			<li><a href="#" class="active">Java</a>
+				<ul>
+					<li><a href="arrays.html" >Arrays</a></li>
+					<li><a href="controlstatements.html">Control Statements</a></li>
+					<li><a href="itrstatements.html" >Iteration Statements</a></li>
+					<li><a href="itrstatements2.html">Iteration Statements 2</a></li>
+					<li><a href="jump.html">Jump Statements</a></li>
+					<li><a href="class.html">Classes and Objects</a></li>
+					<li><a href="#" class="active">Classes and objects 2</a></li>
+					<li><a href="#">Threads</a></li>
+					<li><a href="#">Polymorphism</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Swift</a>
+				<ul>
+					<li><a href="#">Variables</a></li>
+					<li><a href="#">Classes</a></li>
+					<li><a href="#">Objects</a></li>
+					<li><a href="#">Constructors</a></li>
+					<li><a href="#">Interface</a></li>
+					<li><a href="#">Inheritance</a></li>
+					<li><a href="#">Exceptions</a></li>
+					<li><a href="#">Threads</a></li>
+					<li><a href="#">Polymorphism</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Algorithms</a>
+				<ul>
+					<li><a href="#">Variables</a></li>
+					<li><a href="#">Classes</a></li>
+					<li><a href="#">Objects</a></li>
+					<li><a href="#">Constructors</a></li>
+					<li><a href="#">Interface</a></li>
+					<li><a href="#">Inheritance</a></li>
+					<li><a href="#">Exceptions</a></li>
+					<li><a href="#">Threads</a></li>
+					<li><a href="#">Polymorphism</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Contact us</a></li>
+		</ul>
+	</nav>
+		<aside class="left">
+			
+		</aside>
+		<main class="right">
+<h2>Adding a method that takes parameters:</h2>
+<div>
+	<pre>
+		<code>
+class box
+{
+    int height;
+    int width;
+    int length;
+    int volume()
+    {
+         return height*width*length;
+    }
+    void setdimension(int a, int b, int c)
+    {
+        height=a;
+        width=b;
+        length=c;
+    }
+}
+class example
+{
+    public static void main(String args[])
+    {
+        box box1= new box();
+        box box2= new box();
+
+        box1.setdimension(10,20,30);
+        box2.setdimension(10,10,10);
+
+        System.out.println("Volume is "+box1.volume());
+        System.out.println("Volume is "+box2.volume());
+    }
+}  </code>
+	</pre>
+</div>	
+<h2>OUTPUT:</h2>
+<div>
+	<pre class="output">
+		<code class="output">
+Volume is 6000
+Volume is 1000  </code>
+	</pre>
+</div>
+<br>
+<h3>NOTE:</h3>
+<div>
+	<pre>
+		<code>
+class Square
+{
+    int square(int i)
+    {
+        return i*i;
+    }
+}
+class example
+{
+    public static void main(String args[])
+    {
+        Square obj = new Square();
+        int a = 10;
+        System.out.println("The square of a is: "+obj.square(a));
+    }
+}</code>
+	</pre>
+</div>
+<h2>OUTPUT:</h2>
+<div>
+	<pre class="output">
+		<code class="output">
+The square of a is: 100    </code>
+	</pre>
+</div>
+<br>
+<div class="para">
+	It is important to keep the two terms <em>parameter</em> and <em>argument</em> straight. <b>A parameter is a variable defined by a method that receives a value when the method is called</b>. For example, in square( ), i is a parameter. <b>An argument is a value that is passed to a method when it is invoked</b>. For example, square(10) passes 10 as an argument. Inside square( ), the parameter i receives that value. 
+</div>
+<br>
+<h2>Constructors:</h2>
+<ul>
+	<li>
+		<div class="para">
+			It can be tedious to initialise all of the variables in a class each time an instance is created. It would be simpler and more concise to have all of the setup done at the time the object is first created. 
+		</div>
+	</li>
+	<li>
+		<div class="para">
+			Because the requirement for initialisation is so common, Java allows objects to initialise themselves when they are created. This <b>automatic initialisation is performed through the use of a constructor</b>.
+		</div>
+	</li>
+	<li>
+		<div class="para">
+			<b>A constructor initialises an object immediately upon creation. It has the same name as the class in which it resides and is syntactically similar to a method.</b>
+		</div>
+	</li>
+	<li>
+		<div class="para">
+			Once defined, the constructor is <b>automatically called immediately</b> after the object is created, before the new operator completes. 
+		</div>
+	</li>
+	<li>
+		<div class="para">
+			The implicit return type of a class’ constructor is the<em> class type itself</em>. 
+		</div>
+	</li>
+	<li>
+		<div class="para">
+			It is the constructor’s job to initialise the internal state of an object so that the code creating an instance will have a fully initialised, usable object immediately. 
+		</div>
+	</li>
+</ul>
+<br>
+<div>
+	<pre>
+		<code>
+class box
+{
+    int height;
+    int width;
+    int length;
+    box( )
+    {   
+        System.out.println("Constructing box");
+        height=10;
+        width=10;
+        length=10;
+    }
+    int volume()
+    {
+        return height*width*length;
+    }
+}
+class example
+{
+    public static void main(String args[])
+    {
+        box box1= new box();
+        box box2= new box();
+        System.out.println("Volume is "+box1.volume());
+        System.out.println("Volume is "+box2.volume());
+    }
+}</code>
+	</pre>
+</div>
+<h2>OUTPUT:</h2>
+<div>
+	<pre class="output">
+		<code class="output">
+Constructing box
+Constructing box
+Volume is 1000
+Volume is 1000
+</code>
+	</pre>
+</div>
+<h2>Parameterised Constructors: </h2>
+<div>
+	<pre>
+		<code>
+class box
+{
+    int height;
+    int width;
+    int length;
+    box(int h, int w, int l)
+    {   
+        System.out.println("Constructing box");
+        height=h;
+        width=w;
+        length=l;
+    }
+    int volume()
+    {
+        return height*width*length;
+    }
+}
+class example
+{
+    public static void main(String args[])
+    {
+        box box1= new box(10,20,30);
+        box box2= new box(10,10,10);
+        System.out.println("Volume is "+box1.volume());
+        System.out.println("Volume is "+box2.volume());
+    }
+} </code>	
+	</pre>
+</div>
+<h2>OUTPUT:</h2>
+<div>
+	<pre class="output">
+		<code class="output">
+Constructing box
+Constructing box
+Volume is 6000
+Volume is 1000
+		</code>
+	</pre>
+</div>
+<br>
+<div class="para">
+	The values 10, 20, and 30 are passed to the <b>Box( )</b> constructor when <b>new</b> creates the object. Thus,	box1’s copy of <b>width</b>, <b>height</b>, and <b>depth</b> will contain the values 10, 20, and 30, respectively. 
+</div>
+<br>
+<div class="para">
+	The values 10, 10, and 10 are passed to the <b>Box()</b> constructor when new creates the object. Thus, box2’s copy of <b>width</b>, <b>height</b>, and <b>depth</b> will contain the values 10, 10, and 10, respectively. 
+</div>
+<br>
+<h2>this keyword:</h2>
+<div class="para">
+	Java defines the <b>this</b> keyword, <b>this</b> can be used inside any method to refer to the <em>current</em> object. That is, <b>this</b> is always a reference to the object on which the method was invoked. 
+</div>
+<br>
+<div>
+	<pre>
+		<code>
+class box
+{
+    int height;
+    int width;
+    int length;
+    box(int h, int w,int l)
+    {
+        this.height=h;
+        this.width=w;
+        this.length=l;
+    }
+} </code>
+	</pre>
+</div>
+<br>
+<div class="para">
+	This version of <b>Box()</b> operates exactly like the earlier version. The use of this is redundant, but perfectly correct. Inside <b>Box()</b>, <b>this</b> will always refer to the invoking object. 
+</div>
+<br>
+
+
+
+</main>
+
+	<footer id="footer">
+		
+		
+	</footer>
+
+</body>
+</html>
