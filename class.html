@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Iteration Statements 2</title>
+	<link rel="stylesheet" href="stylesheets/stylesheet_home.css">
+</head>
+<body>
+	<header>
+		<h1><a href="home.html">Coderun</a></h1>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="home.html">Home</a></li>
+			<li><a href="#" class="active">Java</a>
+				<ul>
+					<li><a href="arrays.html" >Arrays</a></li>
+					<li><a href="controlstatements.html">Control Statements</a></li>
+					<li><a href="itrstatements.html" >Iteration Statements</a></li>
+					<li><a href="itrstatements2.html">Iteration Statements 2</a></li>
+					<li><a href="jump.html">Jump Statements</a></li>
+					<li><a href="#" class="active">Classes and Objects</a></li>
+					<li><a href="#">Interface</a></li>
+					<li><a href="#">Threads</a></li>
+					<li><a href="#">Polymorphism</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Swift</a>
+				<ul>
+					<li><a href="#">Variables</a></li>
+					<li><a href="#">Classes</a></li>
+					<li><a href="#">Objects</a></li>
+					<li><a href="#">Constructors</a></li>
+					<li><a href="#">Interface</a></li>
+					<li><a href="#">Inheritance</a></li>
+					<li><a href="#">Exceptions</a></li>
+					<li><a href="#">Threads</a></li>
+					<li><a href="#">Polymorphism</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Algorithms</a>
+				<ul>
+					<li><a href="#">Variables</a></li>
+					<li><a href="#">Classes</a></li>
+					<li><a href="#">Objects</a></li>
+					<li><a href="#">Constructors</a></li>
+					<li><a href="#">Interface</a></li>
+					<li><a href="#">Inheritance</a></li>
+					<li><a href="#">Exceptions</a></li>
+					<li><a href="#">Threads</a></li>
+					<li><a href="#">Polymorphism</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Contact us</a></li>
+		</ul>
+	</nav>
+		<aside class="left">
+			
+		</aside>
+		<main class="right">
+		<h1>Introduction to Classes</h1>
+		<ul>
+			<li>
+				<div class="para">
+					Defines the <b>shape</b> and <b>nature</b> of the object.
+				</div>
+			</li>
+			<li>
+				<div class="para">
+					It defines a <b>new data type</b>.
+				</div>
+			</li>
+			<li>
+				<div class="para">
+				Once defined, this new type can be used to create objects of that type. 
+				</div>
+			</li>
+			<li>
+				<div class="para">
+					A class is a <b>template</b> for an <b>object</b>, and an <b>object</b> is an <em>instance</em> of a class. 
+				</div>
+			</li>
+			<li>
+				<div class="para">
+					Because an object is an instance of a class, you will often see the two words <b>object</b> and <b>instance</b> used interchangeably. 
+				</div>
+			</li>
+		</ul>
+		<br>
+		<h2>The general form of a Class:</h2>
+<div class="para">
+When you define a class, you declare its exact form and nature. You do this by specifying the data that it contains and the code that operates on that data. A class’ code defines the interface to its data. A class is declared by use of the <b>class</b> keyword. 
+</div>
+<br>
+<div class="para">
+	A simplified general form of a <b>class</b> definition is:
+</div>
+<br>
+<div>
+	<pre>
+		<code>
+class classname 
+{ 	type instance-variable1; 
+	type instance-variable2; 
+	// ... 
+	type instance-variableN; 
+	type methodname1(parameter-list)
+ 	{ 
+		// <i>body of method</i>
+	 } 
+	type methodname2(parameter-list) 
+	{
+	 	// <i>body of method</i> 
+	} 	//<i>...type methodnameN(parameter-list)</i> 
+	{ 
+		//<i>body of method</i> 
+	} 
+}</code>
+	</pre>
+</div>
+<br>
+<ul>
+	<li>
+		<div class="para">
+			The data, or variables, defined within a <b>class</b> are called <b>instance variables</b>. 
+		</div>
+	</li>
+	<li>
+		<div class="para">
+			The code is contained within <b>methods</b>.
+		</div>
+	</li>
+	<li>
+		<div class="para">
+			Collectively, the methods and variables defined within a class are called <b>members</b> of the class. 
+		</div>
+	</li>
+	<li>
+		<div class="para">
+Variables defined within a class are called <b>instance variables</b> because each instance of the class (that is, each object of the class) contains its own copy of these variables. Thus, the data for one object is separate and unique from the data for another. 
+		</div>
+	</li>
+</ul>
+
+<h3>NOTE:</h3>
+<div>
+	<pre>
+		<code>
+class box
+{
+    int height;
+    int length;
+    int breadth;
+}</code>
+	</pre>
+</div>
+<br>
+<div class="para">
+	As stated, a class defines a <b>new type of data</b>. In this case, the new data type is called <b>Box</b>. You will use this name to declare objects of type Box. It is important to remember that a <b>class declaration</b> only creates a template; it does not create an actual object. <b>Thus, the preceding code does not cause any objects of type Box to come into existence.</b>
+	<br>
+	To actually create a Box object, you will use a statement like the following: 
+</div>
+<br>
+<div>
+	<pre>
+		<code>
+Box mybox = new Box( ); 
+// <i>create a Box object called mybox</i> </code>
+	</pre>
+</div>
+<br>
+<div class="para">
+	After this statement executes, <b>mybox</b> will be an instance of <b>Box</b>. Thus, it will have <em>physical</em> reality.
+</div>
+<br>
+<h2>Declaring objects:</h2>
+<div class="para">
+	Obtaining objects of a class is a two-step process. First, you must declare a variable of the class type. This variable does not define an object. Instead, it is simply a variable that can refer to an object. Second, you must acquire an actual, physical copy of the object and assign it to that variable. You can do this using the <b>new</b> operator. The new operator <b>dynamically</b> allocates (that is, allocates at run time) memory for an object and returns a reference to it. This reference is, more or less, the address in memory of the object allocated by <b>new</b>. This reference is then stored in the variable. Thus, in Java, all class objects must be dynamically allocated. 
+</div>
+<br>
+<div>
+	<pre>
+		<code>
+Box mybox; // <i>declare reference to object</i>
+mybox = new Box(); // <i>allocate a Box object</i></code>
+	</pre>
+</div>
+<br>
+<div class="para">
+	Combining both the statements we can write it as:
+</div>
+<br>
+<div>
+	<pre>
+		<code>
+Box mybox = new Box();</code> 
+	</pre>
+</div>
+<br>
+<div class="para">
+The first line declares <b>mybox</b> as a reference to an object of type <b>Box</b>. After this line executes, <b>mybox</b> contains the value <b>null</b>, which indicates that it does not yet point to an actual object. Any attempt to use <b>mybox</b> at this point will result in a compile-time error. The next line allocates an actual object and assigns a reference to it to <b>mybox</b>. After the second line executes, you can use <b>mybox</b> as if it were a <b>Box</b> object. But in reality, <b>mybox</b> simply holds the memory address of the actual <b>Box</b> object.</div>
+<br>
+<h2>Introducing Methods:</h2>
+<div class="para">
+	This is the general form of a method: 
+</div>
+<br>
+<div>
+	<pre>
+		<code>
+type name(parameter-list) 
+{ 
+	//<i>body of method</i> 
+}</code>
+	</pre>
+</div>
+<br>
+<ul>
+	<li>
+		<div class="para">
+<em>Type</em> specifies the type of data returned by the method. This can be any valid type, including class types that you create. 
+		</div>
+	</li>
+	<li>
+		<div class="para">
+If the method does not return a value, its return type must be <b>void</b>. 
+	</div>
+	</li>
+	<li>
+		<div class="para">
+The name of the method is specified by <em>name</em>. This can be any legal identifier other than those already used by other items within the current scope. 
+		</div>
+	</li>
+	<li>
+		<div class="para">
+The <em>parameter-list</em> is a sequence of type and identifier pairs separated by commas. Parameters are essentially variables that receive the value of the <em>arguments</em> passed to the method when it is called. 
+		</div>
+	</li>
+</ul>		
+<br>
+<h2>Adding a method to the Box Class:</h2>
+<div>
+	<pre>
+		<code>
+class box
+{
+    int height;
+    int width;
+    int length;
+    void volume()
+    {
+        System.out.print("Volume is ");
+        System.out.println(height*width*length);
+    }
+}
+class example
+{
+    public static void main(String args[])
+    {
+        box box1= new box();
+        box box2= new box();
+
+        box1.height=10;
+        box1.width=20;
+        box1.length= 30;
+        box2.height=10;
+        box2.width=10;
+        box2.length=10;
+
+        box1.volume();
+        box2.volume();
+    }
+}</code>
+	</pre>
+</div>
+<h2>OUTPUT:</h2>
+<div>
+	<pre class="output">
+		<code>
+Volume is 6000
+Volume is 1000</code>
+	</pre>
+</div>
+<br>
+<h2>Returning a value:</h2>
+<div>
+	<pre>
+		<code>
+class box
+{
+    int height;
+    int width;
+    int length;
+    int volume()
+    {
+        int volume;
+        volume=height*width*length;
+        return volume;
+    }
+}
+class example
+{
+    public static void main(String args[])
+    {
+        box box1= new box();
+        box box2= new box();
+        int volume1, volume2;
+        box1.height=10;
+        box1.width=20;
+        box1.length=30;
+        box2.height=10;
+        box2.width=10;
+        box2.length=10;
+        volume1= box1.volume();
+        volume2= box2.volume();
+        System.out.println("Volume is "+volume1);
+        System.out.println("Volume is "+volume2);
+    }
+}
+</code>
+</pre>
+</div>
+<h2>OUTPUT:</h2>
+<div>
+	<pre class="output">
+		<code>
+Volume is 6000
+Volume is 1000</code>
+	</pre>
+</div>
+<br>
+
+
+</main>
+
+	<footer id="footer">
+		
+		
+	</footer>
+
+</body>
+</html>
