@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Method Overloading</title>
+	<link rel="stylesheet" href="stylesheets/stylesheet_home.css">
+</head>
+<body>
+	<header>
+		<h1><a href="home.html">Coderun</a></h1>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="home.html">Home</a></li>
+			<li><a href="#" class="active">Java</a>
+				<ul>
+					<li><a href="arrays.html" >Arrays</a></li>
+					<li><a href="controlstatements.html">Control Statements</a></li>
+					<li><a href="itrstatements.html" >Iteration Statements</a></li>
+					<li><a href="itrstatements2.html">Iteration Statements 2</a></li>
+					<li><a href="jump.html">Jump Statements</a></li>
+					<li><a href="class.html">Classes and Objects</a></li>
+					<li><a href="class2.html">Classes and Objects 2</a></li>
+					<li><a href="class3.html" >Classes and Objects 3</a></li>
+					<li><a href="#" class="active">Method Overloading</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Swift</a>
+				<ul>
+					<li><a href="#">Variables</a></li>
+					<li><a href="#">Classes</a></li>
+					<li><a href="#">Objects</a></li>
+					<li><a href="#">Constructors</a></li>
+					<li><a href="#">Interface</a></li>
+					<li><a href="#">Inheritance</a></li>
+					<li><a href="#">Exceptions</a></li>
+					<li><a href="#">Threads</a></li>
+					<li><a href="#">Polymorphism</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Algorithms</a>
+				<ul>
+					<li><a href="#">Variables</a></li>
+					<li><a href="#">Classes</a></li>
+					<li><a href="#">Objects</a></li>
+					<li><a href="#">Constructors</a></li>
+					<li><a href="#">Interface</a></li>
+					<li><a href="#">Inheritance</a></li>
+					<li><a href="#">Exceptions</a></li>
+					<li><a href="#">Threads</a></li>
+					<li><a href="#">Polymorphism</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Contact us</a></li>
+		</ul>
+	</nav>
+		<aside class="left">
+			
+		</aside>
+		<main class="right">
+<h1>Method Overloading</h1>
+<ul>
+	<li>
+		<div class="para">
+			In Java it is possible to define <b>two or more methods</b> within the same class that <b>share the same name, as long as their parameter declarations are different</b>. When this is the case, the methods are said to be <b>overloaded</b>, and the process is referred to as <b>method overloading</b>. 
+		</div>
+	</li>
+	<li>
+		<div class="para">
+			Method overloading is one of the ways that Java supports <b>polymorphism</b>.
+		</div>
+	</li>
+	<li>
+		<div class="para">
+			When an overloaded method is invoked, Java uses the <b>type and/or number of arguments</b> as its guide to determine which version of the overloaded method to actually call. 
+		</div>
+	</li>
+	<li>
+		<div class="para">
+			Thus, overloaded methods must differ in the type and/or number of their parameters. 
+		</div>
+	</li>
+	<li>
+		<div class="para">
+			While overloaded methods may have different return types, the return type alone is insufficient to distinguish two versions of a method.
+		</div>
+	</li>
+</ul>
+<br>
+<div>
+	<pre>
+		<code>
+class overloading
+{
+    void test()
+    {
+        int a=10;
+        System.out.println(a);
+    }
+    void test(int a)
+    {
+       System.out.println("a is: "+a);
+    }
+    void test(int a, int b)
+    {
+        System.out.println("a and b: "+a+" "+b);
+    }
+    double test(double a)
+    {   
+        System.out.println("a is: "+a);
+        return a*a;
+    }
+}
+class example
+{
+    public static void main(String args[])
+    {   
+        double result;
+        overloading object= new overloading();
+        object.test();
+        object.test(10);
+        object.test(10,20);
+        result=object.test(13.2);
+        System.out.println("Square is:"+result);
+    }
+} </code>
+	</pre>
+</div>
+<h2>OUTPUT:</h2>
+<div>
+	<pre class="output">
+		<code class="output">
+10
+a is: 10
+a and b: 10 20
+a is: 13.2
+Square is:174.23999999999998  </code>
+	</pre>
+</div>
+<br>
+<div class="para">
+	When an overloaded method is called, Java looks for a match between the arguments used to call the method and the method’s parameters. However, this match need not always be exact. In some cases, <b>Java’s automatic type conversions can play a role in overload resolution</b>. 
+</div>
+
+<br>
+<div>
+	<pre>
+		<code>
+class overloading
+{
+    void test()
+    {
+        int a=10;
+        System.out.println(a);
+    }
+    void test(int a, int b)
+    {
+        System.out.println("a and b: "+a+" "+b);
+    }
+    void test(double a)
+    {
+        System.out.println(a);
+    }
+}
+class example
+{
+    public static void main(String args[])
+    {   
+        overloading object= new overloading();
+        int a=88;
+        object.test();
+        object.test(10,20);
+        object.test(88);
+        object.test(13.2);
+    }
+} </code>
+	</pre>
+</div>
+<h2>OUTPUT:</h2>
+<div>
+	<pre class="output">
+		<code class="output">
+10
+a and b: 10 20
+88.0
+13.2     </code>
+	</pre>
+</div>
+<h2>Overloading Constructors:</h2>
+<div class="para">
+In addition to overloading normal methods, you can also overload constructor methods. In fact, for most real-world classes that you create, overloaded constructors will be the <i>norm, not the exception</i>. 
+</div>
+<br>
+<div>
+	<pre>
+		<code>
+class box
+{   
+    int height;
+    int width;
+    int length;
+    box()
+    {
+        height=width=length=1;
+    }
+    box(int h, int w, int l)
+    {
+        height=h;
+        width=w;
+        length=l;
+    }
+    box(int a)
+    {
+        height=width=length=a;
+    }
+    int volume()
+    {
+        return height*width*length;
+    }
+}
+class example
+{   
+    public static void main(String args[])
+    {
+        box box1= new box();
+        box box2= new box(10,20,30);
+        box box3= new box(10);
+        int a= box1.volume();
+        System.out.println("Volume is: "+a);
+        a= box2.volume();
+        System.out.println("Volume is: "+a);
+        a= box3.volume();
+        System.out.println("Volume is: "+a);
+    }
+} </code>
+	</pre>
+</div>
+<h2>OUTPUT:</h2>
+<div>
+	<pre class="output">
+		<code class="output">
+Volume is: 1
+Volume is: 6000
+Volume is: 1000  </code>
+	</pre>
+</div>
+<br>
+<div class="para">
+	The proper overloaded constructor is called based upon the <b>parameters specified</b> when <b>new</b> is executed. 
+</div>
+<br>
+
+
+
+</main>
+
+	<footer id="footer">
+
+		
+		
+	</footer>
+
+</body>
+</html>
