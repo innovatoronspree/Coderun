@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Classes and Objects 2</title>
+	<link rel="stylesheet" href="stylesheets/stylesheet_home.css">
+</head>
+<body>
+	<header>
+		<h1><a href="home.html">Coderun</a></h1>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="home.html">Home</a></li>
+			<li><a href="#" class="active">Java</a>
+				<ul>
+					<li><a href="arrays.html" >Arrays</a></li>
+					<li><a href="controlstatements.html">Control Statements</a></li>
+					<li><a href="itrstatements.html" >Iteration Statements</a></li>
+					<li><a href="itrstatements2.html">Iteration Statements 2</a></li>
+					<li><a href="jump.html">Jump Statements</a></li>
+					<li><a href="class.html">Classes and Objects</a></li>
+					<li><a href="class2.html">Classes and Objects 2</a></li>
+					<li><a href="#" class="active">Classes and Objects 3</a></li>
+					<li><a href="#">Polymorphism</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Swift</a>
+				<ul>
+					<li><a href="#">Variables</a></li>
+					<li><a href="#">Classes</a></li>
+					<li><a href="#">Objects</a></li>
+					<li><a href="#">Constructors</a></li>
+					<li><a href="#">Interface</a></li>
+					<li><a href="#">Inheritance</a></li>
+					<li><a href="#">Exceptions</a></li>
+					<li><a href="#">Threads</a></li>
+					<li><a href="#">Polymorphism</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Algorithms</a>
+				<ul>
+					<li><a href="#">Variables</a></li>
+					<li><a href="#">Classes</a></li>
+					<li><a href="#">Objects</a></li>
+					<li><a href="#">Constructors</a></li>
+					<li><a href="#">Interface</a></li>
+					<li><a href="#">Inheritance</a></li>
+					<li><a href="#">Exceptions</a></li>
+					<li><a href="#">Threads</a></li>
+					<li><a href="#">Polymorphism</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Contact us</a></li>
+		</ul>
+	</nav>
+		<aside class="left">
+			
+		</aside>
+		<main class="right">
+<h2>Instance Variable Hiding:</h2>
+<ul>
+	<li>
+		<div class="para">
+			It is illegal in Java to declare two local variables with the same name inside the same or enclosing scopes. 
+		</div>
+	</li>
+	<li>
+		<div class="para">
+			Interestingly, you can have local variables, including formal parameters to methods, which overlap with the names of the class’ instance variables. <b>However, when a local variable has the same name as an instance variable, the local variable hides the instance variable.</b> 
+		</div>
+	</li>
+	<li>
+		<div class="para">
+			The <em>this</em> keyword lets you refer directly to the object, you can use it to resolve any name space collisions that might occur between instance variables and local variables. 
+		</div>
+	</li>
+</ul>
+<br>
+<div>
+	<pre>
+		<code>
+class box
+{
+    int height;
+    int width;
+    int length;
+    box(int height, int width, int length)
+    {   
+        System.out.println("Constructing box");
+        this.height=height;
+        this.width=width;
+        this.length=length;
+    }
+    int volume()
+    {
+        return height*width*length;
+    }
+}
+class example
+{
+    public static void main(String args[])
+    {
+        box box1= new box(10,20,30);
+        box box2= new box(10,10,10);
+        System.out.println("Volume is "+box1.volume());
+        System.out.println("Volume is "+box2.volume());
+    }
+}</code>
+	</pre>
+</div>
+<h2>OUTPUT:</h2>
+<div>
+	<pre class="output">
+		<code class="output">
+Constructing box
+Constructing box
+Volume is 6000
+Volume is 1000
+</code>
+	</pre>
+</div>
+<h2>Garbage Collection:</h2>
+<div class="para">
+Since objects are dynamically allocated by using the <b>new</b> operator, how such objects are destroyed and their memory released for later reallocation. In some languages, such as C++, dynamically allocated objects must be manually released by use of a delete operator. <b>Java takes a different approach; it handles deallocation for you automatically. The technique that accomplishes this is called garbage collection. It works like this: when no references to an object exist, that object is assumed to be no longer needed, and the memory occupied by the object can be reclaimed.</b> There is no explicit need to destroy objects as in C++. Garbage collection only occurs sporadically (if at all) during the execution of your program. It will not occur simply because one or more objects exist that are no longer used. Furthermore, different Java run-time implementations will take varying approaches to garbage collection.
+</div>
+<br>
+<h2>A stack class implementation:</h2>
+<ul>
+	<li>
+		<div class="para">
+			One of OOP’s most important benefits is the encapsulation of data and the code that manipulates that data. 
+		</div>
+	</li>
+	<li>
+		<div class="para">
+			The class is the mechanism by which <em>encapsulation</em> is achieved in Java. By creating a class, you are creating a new data type that defines both the nature of the data being manipulated and the routines used to manipulate it. 
+		</div>
+	</li>
+	<li>
+		<div class="para">
+			The methods define a consistent and controlled interface to the class’ data. 
+		</div>
+	</li>
+
+</ul>
+<br>
+<div>
+	<pre>
+		<code>
+class stack
+{
+    int stck[]=new int[10];
+    int top;
+    stack()
+    {
+        top=-1;
+    }
+    void push(int s)
+    {
+        if(top<9)
+        {
+            top=top+1;
+            stck[top]=s;
+        }
+        else
+        {
+            System.out.println("Stack full");
+        }
+    }
+    int pop()
+    {
+        if(top<0)
+        {   
+            System.out.println("Stack underflow");
+            return -1;
+        }
+        else
+        {
+            int s= stck[top];
+            top=top-1;
+            return s;
+        }
+    }
+}
+class example
+{   
+    public static void main(String args[])
+    {
+        stack stack1= new stack();
+        stack stack2= new stack();
+        int x=0;
+        int y=10;
+        for(int i=0;i<10;i++)
+        {
+            stack1.push(x);
+            x++;
+        }
+        System.out.println("Popping elements from stack 1:");
+        for(int j=0;j<10;j++)
+        {
+            int s= stack1.pop();
+            System.out.print(s+" ");
+        }
+        System.out.println();
+        System.out.println("Popping elements from stack 2:");
+        for(int k=0;k<10;k++)
+        {
+            stack2.push(y);
+            y++;
+        }
+        for(int l=0;l<10;l++)
+        {
+            int s=stack2.pop();
+           System.out.print(s+" ");
+        }
+    }
+}</code>
+	</pre>
+</div>
+<h2>OUTPUT:</h2>
+<div>
+	<pre class="output">
+		<code class="output">
+Popping elements from stack 1:
+9 8 7 6 5 4 3 2 1 0 
+Popping elements from stack 2:
+19 18 17 16 15 14 13 12 11 10 
+</code>
+	</pre>
+</div>
+<br>
+
+
+</main>
+
+	<footer id="footer">
+		
+		
+	</footer>
+
+</body>
+</html>
