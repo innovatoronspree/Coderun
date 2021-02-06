@@ -6,6 +6,21 @@
 	<link rel="stylesheet" href="stylesheets/stylesheet_home.css">
 	<link rel="stylesheet" href="stylesheets/footer.css">
 	<script src="https://kit.fontawesome.com/417a1cb1e0.js" crossorigin="anonymous"></script>
+	<style>
+		.left ul li a{
+			text-decoration: none;
+			color: green;
+
+		}
+		.left ul{
+			list-style-type: circle;
+		}
+		.left ul li{
+			list-style-type: circle;
+			padding-bottom: 15px;
+		}
+
+	</style>
 </head>
 <body>
 	<header>
@@ -47,11 +62,22 @@
 		</ul>
 	</nav>
 		<aside class="left">
-			
+			<ul>
+				<li><a href="#intro">Average of numbers</a></li>
+				<li><a href="#dec">Declaration</a></li>
+				<li><a href="#ini">Initialization</a></li>
+				<li><a href="#multi">Multi-dimensional Arrays</a></li>
+					<li><a href="#mdec">Declaration</a></li>
+					<li><a href="#mini">Initialization</a></li>
+				
+				
+
+			</ul>
 		</aside>
+
 		<main class="right">
 		<h1>Arrays</h1>
-		<h2>Average of numbers using arrays:</h2>
+		<h2 id="intro">Average of numbers using arrays:</h2>
 		<div>
 			<pre>
 				<code>
@@ -92,7 +118,7 @@ Average is: 5.0
 		</div>
 
 
-		<h2>Declaration of array:</h2>
+		<h2 id="dec">Declaration of array:</h2>
 		<div class="para">
 			int array[]=new int[11] <br>
 	
@@ -102,7 +128,7 @@ Average is: 5.0
       	array= new int[11];
 
 		</div>
-		<h2>Declaration and initialisation at one go:</h2>
+		<h2 id="ini">Declaration and initialisation at one go:</h2>
 		<div>
 			<pre>
 				<code>
@@ -135,7 +161,7 @@ Average is 3
 		<div class="para">
 		Here use of new was not required.
 		</div>
-		<h2>Introduction to multi-dimensional arrays:</h2>
+		<h2 id="multi">Introduction to multi-dimensional arrays:</h2>
 		<div>
 			<pre>
 				<code>
@@ -263,7 +289,7 @@ class introduction
 		The use of uneven (or, irregular) multidimensional arrays may not be appropriate for many applications, because it runs contrary to what people expect to find when a multidimensional array is encountered. However, irregular arrays can be used effectively in some situations. For example, if you need a very large two-dimensional array that is sparsely populated (that is, one in which not all of the elements will be used), then an irregular array might be a perfect solution. 
 	</div>
 	<br>
-	<h2> Declaration and initialisation at one go: </h2>
+	<h2 id="mdec"> Declaration and initialisation at one go: </h2>
 	<div class="para">
 		int array[][]= { {0,1,2,3}, {4,5,6,7},{8,9,10,11},{12,13,14,15}};
 	</div>
@@ -302,7 +328,7 @@ class introduction
 			</pre>
 		</div>
 	<br>
-	<h2>Alternative ways to declare arrays:</h2>
+	<h2 id="mini">Alternative ways to declare arrays:</h2>
 	<div class="para">
 	int array[]; <br>
  

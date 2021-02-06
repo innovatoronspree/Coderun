@@ -6,6 +6,21 @@
 	<link rel="stylesheet" href="stylesheets/stylesheet_home.css">
 	<link rel="stylesheet" href="stylesheets/footer.css">
 	<script src="https://kit.fontawesome.com/417a1cb1e0.js" crossorigin="anonymous"></script>
+	<style>
+		.left ul li a{
+			text-decoration: none;
+			color: green;
+
+		}
+		.left ul{
+			list-style-type: circle;
+		}
+		.left ul li{
+			list-style-type: circle;
+			padding-bottom: 15px;
+		}
+
+	</style>
 </head>
 <body>
 	<header>
@@ -47,7 +62,12 @@
 		</ul>
 	</nav>
 		<aside class="left">
-			
+			<ul>
+				<li><a href="#intro">Average of numbers</a></li>
+				<li><a href="#dec">Declaration</a></li>
+				<li><a href="#met">Introducing methods</a></li>
+				<li><a href="#addm">Adding method to class</a></li>
+			</ul>
 		</aside>
 		<main class="right">
 		<h1>Introduction to Classes</h1>
@@ -79,7 +99,7 @@
 			</li>
 		</ul>
 		<br>
-		<h2>The general form of a Class:</h2>
+		<h2 id="intro">The general form of a Class:</h2>
 <div class="para">
 When you define a class, you declare its exact form and nature. You do this by specifying the data that it contains and the code that operates on that data. A class’ code defines the interface to its data. A class is declared by use of the <b>class</b> keyword. 
 </div>
@@ -165,7 +185,7 @@ Box mybox = new Box( );
 	After this statement executes, <b>mybox</b> will be an instance of <b>Box</b>. Thus, it will have <em>physical</em> reality.
 </div>
 <br>
-<h2>Declaring objects:</h2>
+<h2 id="dec">Declaring objects:</h2>
 <div class="para">
 	Obtaining objects of a class is a two-step process. First, you must declare a variable of the class type. This variable does not define an object. Instead, it is simply a variable that can refer to an object. Second, you must acquire an actual, physical copy of the object and assign it to that variable. You can do this using the <b>new</b> operator. The new operator <b>dynamically</b> allocates (that is, allocates at run time) memory for an object and returns a reference to it. This reference is, more or less, the address in memory of the object allocated by <b>new</b>. This reference is then stored in the variable. Thus, in Java, all class objects must be dynamically allocated. 
 </div>
@@ -192,7 +212,7 @@ Box mybox = new Box();</code>
 <div class="para">
 The first line declares <b>mybox</b> as a reference to an object of type <b>Box</b>. After this line executes, <b>mybox</b> contains the value <b>null</b>, which indicates that it does not yet point to an actual object. Any attempt to use <b>mybox</b> at this point will result in a compile-time error. The next line allocates an actual object and assigns a reference to it to <b>mybox</b>. After the second line executes, you can use <b>mybox</b> as if it were a <b>Box</b> object. But in reality, <b>mybox</b> simply holds the memory address of the actual <b>Box</b> object.</div>
 <br>
-<h2>Introducing Methods:</h2>
+<h2 id="met">Introducing Methods:</h2>
 <div class="para">
 	This is the general form of a method: 
 </div>
@@ -230,7 +250,7 @@ The <em>parameter-list</em> is a sequence of type and identifier pairs separated
 	</li>
 </ul>		
 <br>
-<h2>Adding a method to the Box Class:</h2>
+<h2 id="addm">Adding a method to the Box Class:</h2>
 <div>
 	<pre>
 		<code>
